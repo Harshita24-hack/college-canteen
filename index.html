@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Courtyard Canteen</title>
+
+<!-- Google Fonts: Fraunces (characterful display serif) + Work Sans (clean body) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="site-header">
+    <div class="brand">
+      <!-- Simple brass monogram emblem -->
+      <svg class="emblem" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="30" cy="30" r="28" fill="none" stroke="currentColor" stroke-width="1.5"/>
+        <circle cx="30" cy="30" r="23" fill="none" stroke="currentColor" stroke-width="0.75"/>
+        <text x="30" y="38" text-anchor="middle" font-family="Fraunces, serif" font-size="20" fill="currentColor">CC</text>
+      </svg>
+      <div class="brand-text">
+        <span class="brand-name">The Courtyard Canteen</span>
+        <span class="brand-tagline">Campus food, plated properly</span>
+      </div>
+    </div>
+
+    <button class="cart-toggle" id="cartToggle" aria-label="Open cart">
+      Cart <span class="cart-count" id="cartCount">0</span>
+    </button>
+  </header>
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero">
+    <p class="hero-eyebrow">Est. in every college hostel corridor</p>
+    <h1 class="hero-title">The everyday tiffin,<br>served like it means something.</h1>
+    <p class="hero-sub">Chai, dosa, thali and everything in between — from the same canteen, taken a little more seriously.</p>
+    <a href="#menu" class="hero-scroll">View the menu ↓</a>
+  </section>
+
+  <!-- ===================== MENU ===================== -->
+  <section class="menu" id="menu">
+
+    <!-- Category rail (sticky on desktop, horizontal scroll on mobile) -->
+    <nav class="category-rail" id="categoryRail" aria-label="Menu categories">
+      <a href="#chai" class="category-link active">Chai &amp; Beverages</a>
+      <a href="#tiffin" class="category-link">Morning Tiffin</a>
+      <a href="#mains" class="category-link">Mains &amp; Thalis</a>
+      <a href="#snacks" class="category-link">Short Eats</a>
+      <a href="#sweets" class="category-link">Sweet Endings</a>
+    </nav>
+
+    <!-- Menu items are injected here by script.js from the menuData list -->
+    <div class="menu-list" id="menuList"></div>
+
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="footer-emblem">
+      <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" width="40" height="40">
+        <circle cx="30" cy="30" r="28" fill="none" stroke="currentColor" stroke-width="1"/>
+        <text x="30" y="38" text-anchor="middle" font-family="Fraunces, serif" font-size="18" fill="currentColor">CC</text>
+      </svg>
+    </div>
+    <p class="footer-hours">Open Monday – Saturday, 8:00 AM – 7:00 PM</p>
+    <p class="footer-location">Ground Floor, Student Activity Block</p>
+  </footer>
+
+  <!-- ===================== CART DRAWER ===================== -->
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Your order">
+    <div class="cart-header">
+      <h2>Your Order</h2>
+      <button class="cart-close" id="cartClose" aria-label="Close cart">×</button>
+    </div>
+
+    <div class="cart-items" id="cartItems">
+      <p class="cart-empty" id="cartEmpty">Your tray is empty. Add something from the menu.</p>
+    </div>
+
+    <div class="cart-footer">
+      <div class="cart-total-row">
+        <span>Total</span>
+        <span id="cartTotal">₹0</span>
+      </div>
+      <button class="checkout-btn" id="checkoutBtn">Place Order</button>
+    </div>
+  </aside>
+
+  <!-- ===================== CONFIRMATION MODAL ===================== -->
+  <div class="confirm-overlay" id="confirmOverlay">
+    <div class="confirm-box">
+      <div class="confirm-emblem">✓</div>
+      <h2>Order placed</h2>
+      <p id="confirmMessage">Your tray will be ready at the counter shortly.</p>
+      <button class="confirm-close" id="confirmClose">Back to menu</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
